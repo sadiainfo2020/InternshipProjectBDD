@@ -18,4 +18,14 @@
 #Sample Feature Definition Template
 
 
+Feature: Positive Test Appliation by providing valid credentials
+Scenario Outline: As aregistered user, you should be able to submit the application
+Given user lands on QA Engineering application page
+Then user write"<firstname>" and "<lastname>"
+And user write "<email>"and"<phone>"
+Then user select "<state>"
+And User can click submit button
 
+Examples:
+ |firstname |lastname |email            |phone       |state  |
+ |Tom       |TM       |test123@gmail.com|123-456-7890|newyork|
