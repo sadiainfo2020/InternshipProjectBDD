@@ -6,9 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.MainClass;
 
-public class QAEngineeringPage extends MainClass{
-
+public class ApplicationPage extends MainClass{
 	
+	
+
 	@FindBy(xpath = "//*[@id=\"first_name\"]")
 	WebElement Enterfirstname;
 
@@ -26,19 +27,28 @@ public class QAEngineeringPage extends MainClass{
 
 	@FindBy(xpath = "//*[@id=\"_builder-form\"]/div/div[9]/div/div/div/button")
 	WebElement clicksubmit;
+	
+	@FindBy(xpath="//*[@id=\"menu-24ds\"]/li[3]/ul/li[1]/a")
+	WebElement errmsgemailisinvalid;
+	
+	@FindBy(xpath="//header/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]")
+	WebElement errmsgInvalidphonenumber;
 
-	public QAEngineeringPage() {
+	public ApplicationPage() {
 		PageFactory.initElements(driver, this);
 	}
 
-	public String capturePageTitle() {
+	public String captureQAPageTitle() {
+		return driver.getTitle();
+	}
+	
+	public String captureQAPageUrl() {
 		return driver.getTitle();
 	}
 
 	public void Firstname(String firstname) {
 		Enterfirstname.sendKeys(firstname);
 	}
-
 	public void Lastname(String lastname) {
 		Enterlastname.sendKeys(lastname);
 	}
@@ -58,11 +68,12 @@ public class QAEngineeringPage extends MainClass{
 	public void Clicksubmit() {
 		clicksubmit.click();
 	}
-
-
-
-
-
-
+	public boolean errmsg() {
+		return	errmsgemailisinvalid.isDisplayed();
+		 
+	}
+	public boolean errphonemsg() {
+		return	errmsgInvalidphonenumber.isDisplayed();
+	}	 
 
 }

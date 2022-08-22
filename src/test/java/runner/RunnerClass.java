@@ -7,13 +7,13 @@ import io.cucumber.junit.CucumberOptions;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "C:\\Users\\sadia\\eclipse-workspace\\InternshipProjectBDD\\src\\test\\java\\feature\\Courses.feature",
+@CucumberOptions(features = "C:\\Users\\sadia\\eclipse-workspace\\InternshipProjectBDD\\src\\test\\java\\feature",
                      glue = "step_defination",   
                      monochrome = true,
                      plugin = {"pretty","html:target/cucumberReport.html"},
                      stepNotifications = true, 
                      dryRun = false
-//                   ,  tags = "@Release2.0"
+//                   ,tags = "@Release2.0"
                       )
 
 

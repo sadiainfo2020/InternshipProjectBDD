@@ -1,6 +1,7 @@
 package pageFactory;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -9,8 +10,9 @@ import base.MainClass;
 public class CoursesPage extends MainClass{
 	
 	
-
-	// *[@id="menu-qp18"]/li[3]/a
+        Actions action = new Actions(driver);
+	
+        // *[@id="menu-qp18"]/li[3]/a
 		@FindBy(xpath = "//header/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]")
 		WebElement clickCourses;
 
@@ -19,39 +21,20 @@ public class CoursesPage extends MainClass{
 		WebElement clickDownArrow;
 
 		// *[@id="menu-qp18"]/li[3]/ul/li[1]/a
+		                
 		@FindBy(xpath = "//header/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]")
 		WebElement clickQAEngineering;
 		
 		
-		@FindBy(xpath = "//*[@id=\"first_name\"]")
-		WebElement Enterfirstname;
-
-		@FindBy(xpath = "//*[@id=\"last_name\"]")
-		WebElement Enterlastname;
-
-		@FindBy(xpath = "//*[@id=\"_builder-form\"]/div/div[4]/div/div/input")
-		WebElement Enteremail;
-
-		@FindBy(xpath = "//*[@id=\"phone\"]")
-		WebElement Enterphone;
-
-		@FindBy(xpath = "//*[@id=\"state\"]")
-		WebElement Enterstate;
-
-		@FindBy(xpath = "//*[@id=\"_builder-form\"]/div/div[9]/div/div/div/button")
-		WebElement clicksubmit;
-		
-		
-
-		public CoursesPage() {
+      	public CoursesPage() {
 			PageFactory.initElements(driver, this);
 		}
 
-		public String capturePageTitle() {
+		public String captureCoursesPageTitle() {
 			return driver.getTitle();
 		}
 
-		public String capturePageUrl() {
+		public String captureCoursesPageUrl() {
 			return driver.getCurrentUrl();
 		}
 
@@ -60,14 +43,17 @@ public class CoursesPage extends MainClass{
 		}
 
 		public void clickarrow() {
-			clickDownArrow.click();
+			action.click().build().perform();
 		}
 
 		public void QAEngineering() {
-			clickQAEngineering.click();
+			action.click().build().perform();
+//			clickQAEngineering.click();
+			
+			
 		}
-
-
+	
+	
 
 	
 

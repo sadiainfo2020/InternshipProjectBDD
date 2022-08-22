@@ -18,7 +18,7 @@ public class MainClass {
 	public MainClass() {
 		try {
 		    prop = new Properties();
-			FileInputStream fis = new FileInputStream("C:\\Users\\sadia\\eclipse-workspace\\InternshipProjectBDD\\src\\main\\java\\prorerties\\config.properties");
+			FileInputStream fis = new FileInputStream("C:\\Users\\sadia\\eclipse-workspace\\InternshipProjectBDD\\java\\prorerties\\config.properties");
 			
 			prop.load(fis);
 		} catch (FileNotFoundException e) {
